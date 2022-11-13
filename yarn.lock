@@ -4039,7 +4039,7 @@ eventemitter3@^4.0.0:
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
   integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
 
-events@^3.2.0:
+events@^3.2.0, events@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
   integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
@@ -7158,6 +7158,13 @@ react-scripts@5.0.1:
     workbox-webpack-plugin "^6.4.1"
   optionalDependencies:
     fsevents "^2.3.2"
+
+react-tone-rack@^0.0.1-alpha.0:
+  version "0.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/react-tone-rack/-/react-tone-rack-0.0.1-alpha.0.tgz#f3a3b5ca362a88b8bf56a8c0a667c7363dbdf1d1"
+  integrity sha512-1csfsBXTrSrY/i+hhWno9XTWWXXHtNg2ITHBIf5nIsgsfhI7kX/C7xnjw2QDUJpUOuVjj7BOKP2Gt5+0CCxMCw==
+  dependencies:
+    events "^3.3.0"
 
 react@^18.2.0:
   version "18.2.0"
