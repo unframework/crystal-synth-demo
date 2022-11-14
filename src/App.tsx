@@ -104,7 +104,7 @@ const Main = () => {
         <TestMidi />
         <TestButton />
 
-        <RReverb wet={0.5}>
+        <RReverb wet={0.3}>
           <Synth />
         </RReverb>
       </RackDestination>
