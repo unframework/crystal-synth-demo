@@ -1,9 +1,5 @@
 import * as Tone from 'tone';
-import {
-  RPolySynth,
-  createRackableInstrument,
-  RecursivePartial,
-} from 'react-tone-rack';
+import { createRackableInstrument, RecursivePartial } from 'react-tone-rack';
 
 const RPolyFMSynth = createRackableInstrument<
   RecursivePartial<Tone.PolySynthOptions<Tone.FMSynth>>
@@ -15,14 +11,6 @@ const RPolySimpleSynth = createRackableInstrument<
   RecursivePartial<Tone.PolySynthOptions<Tone.Synth>>
 >(
   Tone.PolySynth as any // @todo
-);
-
-const RFMSynth = createRackableInstrument<
-  RecursivePartial<Tone.FMSynthOptions>
->(Tone.FMSynth);
-
-const RSynth = createRackableInstrument<RecursivePartial<Tone.SynthOptions>>(
-  Tone.Synth
 );
 
 export const Synth: React.FC = () => {
