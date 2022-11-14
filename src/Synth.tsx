@@ -3,7 +3,7 @@ import { createRackableInstrument, RecursivePartial } from 'react-tone-rack';
 
 const RFMSynth = createRackableInstrument<
   RecursivePartial<Tone.FMSynthOptions>
->(Tone.MonoSynth);
+>(Tone.FMSynth);
 
 export const Synth: React.FC = () => {
   return (
