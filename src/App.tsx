@@ -104,7 +104,7 @@ const Main = () => {
         <TestMidi />
         <TestButton />
 
-        <RReverb wet={0.3}>
+        <RReverb wet={0.5}>
           <Synth />
         </RReverb>
       </RackDestination>
@@ -127,7 +127,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>React ToneJS Sandbox</h1>
+      <h1>React ToneJS E-Piano Experiment</h1>
 
       {started ? (
         <Main />
