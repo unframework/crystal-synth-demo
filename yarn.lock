@@ -7177,10 +7177,10 @@ react-scripts@5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
-react-tone-rack@^0.0.1-alpha.0:
-  version "0.0.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/react-tone-rack/-/react-tone-rack-0.0.1-alpha.0.tgz#f3a3b5ca362a88b8bf56a8c0a667c7363dbdf1d1"
-  integrity sha512-1csfsBXTrSrY/i+hhWno9XTWWXXHtNg2ITHBIf5nIsgsfhI7kX/C7xnjw2QDUJpUOuVjj7BOKP2Gt5+0CCxMCw==
+react-tone-rack@^0.0.1-alpha.1:
+  version "0.0.1-alpha.1"
+  resolved "https://registry.yarnpkg.com/react-tone-rack/-/react-tone-rack-0.0.1-alpha.1.tgz#42753620e83b980731d44c9aac42af062dd18bdf"
+  integrity sha512-KniNXCTQk6WsXwCGXlSsFQOGcBZ7Q7abU8lHuM861RS6sHtHSzDFMLrZqbE8qBi7Ns4pXbfDz2Ztr5VjlFwCtw==
   dependencies:
     events "^3.3.0"
 
