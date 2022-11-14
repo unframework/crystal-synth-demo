@@ -31,11 +31,11 @@ export const Synth: React.FC = () => {
       <RPolyFMSynth
         notes="exampleSynth"
         duration="4n"
-        volume={-3}
+        volume={-7} // quieter than tonebar
         voice={Tone.FMSynth}
         options={{
           modulationIndex: 30,
-          harmonicity: 18,
+          harmonicity: 18, // high ratio to create lots of metallic overtones
           modulationEnvelope: {
             attack: 0,
             decay: 0,
@@ -46,7 +46,7 @@ export const Synth: React.FC = () => {
             attack: 0.01,
             decay: 0.5,
             sustain: 0,
-            release: 0,
+            release: 0.05, // softer cut-off just in case
           },
         }}
       />
@@ -54,7 +54,7 @@ export const Synth: React.FC = () => {
       <RPolySimpleSynth
         notes="exampleSynth"
         duration="4n"
-        volume={-2}
+        volume={-6}
         voice={Tone.Synth}
         options={{
           oscillator: {
@@ -62,9 +62,9 @@ export const Synth: React.FC = () => {
           },
           envelope: {
             attack: 0.02, // slightly slower start
-            decay: 0.5, // very slow decay
-            sustain: 0.2,
-            release: 0.3,
+            decay: 0.3,
+            sustain: 0.5,
+            release: 1.5, // residual vibration
           },
         }}
       />
