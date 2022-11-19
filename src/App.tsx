@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import * as Tone from 'tone';
-import { RackDestination, RReverb, useNoteEmitter } from 'react-tone-rack';
+import {
+  RackDestination,
+  RReverb,
+  RFeedbackDelay,
+  useNoteEmitter,
+} from 'react-tone-rack';
 
 import { Synth } from './Synth';
 
@@ -13,7 +18,67 @@ const TestButton = () => {
     <button
       type="button"
       onClick={() => {
-        emitNote(Tone.immediate(), 'C4');
+        const testPattern = new Tone.Part<[string, string]>(
+          (time, chord) => {
+            for (const note of chord.split(/\s+/g)) {
+              emitNote(time, note);
+            }
+          },
+          [
+            // Yamanote departure jingle
+            ['0:0:0', 'G5'],
+            ['0:0:2', 'G4'],
+            ['0:1:0', 'A4'],
+            ['0:1:2', 'G4'],
+            ['0:2:0', 'C5'],
+            ['0:2:2', 'G4'],
+            ['0:3:0', 'E5'],
+            ['0:3:2', 'G4'],
+
+            ['1:0:0', 'G5 G6'],
+            ['1:0:2', 'G4'],
+            ['1:1:0', 'A4'],
+            ['1:1:2', 'G4'],
+            ['1:2:0', 'C5'],
+            ['1:2:2', 'G4'],
+            ['1:3:0', 'E5'],
+            ['1:3:2', 'G4'],
+
+            ['2:0:0', 'G5'],
+            ['2:0:2', 'G4'],
+            ['2:1:0', 'A4'],
+            ['2:1:2', 'G4'],
+            ['2:2:0', 'B4'],
+            ['2:2:2', 'G4'],
+            ['2:3:0', 'D5'],
+            ['2:3:2', 'G4'],
+
+            ['3:0:0', 'G5 G6'],
+            ['3:0:2', 'G4'],
+            ['3:1:0', 'A4'],
+            ['3:1:2', 'G4'],
+            ['3:2:0', 'B4'],
+            ['3:2:2', 'G4'],
+            ['3:3:0', 'D5'],
+            ['3:3:2', 'G4'],
+
+            ['4:0:0', 'G4 C5'],
+            ['4:0:2', 'E4'],
+            ['4:1:0', 'G4'],
+            ['4:1:2', 'C5'],
+            ['4:2:0', 'C5 E5'],
+            ['4:2:2', 'C5'],
+            ['4:3:0', 'E5'],
+            ['4:3:2', 'G5'],
+
+            ['5:0:0', 'G5 C6'],
+          ]
+        );
+        // testPattern.loop = true;
+        // testPattern.loopEnd = '2m';
+        testPattern.start();
+
+        // emitNote(Tone.immediate(), 'C4');
       }}
     >
       Play Note
@@ -104,8 +169,10 @@ const Main = () => {
         <TestMidi />
         <TestButton />
 
-        <RReverb wet={0.5}>
-          <Synth />
+        <RReverb decay={3} wet={0.6}>
+          <RFeedbackDelay wet={0.3} delayTime={0.3} feedback={0.5}>
+            <Synth />
+          </RFeedbackDelay>
         </RReverb>
       </RackDestination>
     </div>
