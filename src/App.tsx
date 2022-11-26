@@ -170,7 +170,7 @@ const Main = () => {
         <TestButton />
 
         <RReverb decay={3} wet={0.6}>
-          <RFeedbackDelay wet={0.3} delayTime={0.3} feedback={0.5}>
+          <RFeedbackDelay wet={0.2} delayTime={0.3} feedback={0.1}>
             <Synth />
           </RFeedbackDelay>
         </RReverb>
