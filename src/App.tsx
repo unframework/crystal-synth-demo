@@ -9,14 +9,19 @@ import {
 
 import { Synth } from './Synth';
 
-import './App.css';
-
 const TestButton = () => {
   const emitNote = useNoteEmitter('exampleSynth');
 
   return (
     <button
       type="button"
+      className="
+        button w-40 h-16 bg-green-400 rounded-lg cursor-pointer select-none
+        active:translate-y-2  active:[box-shadow:0_0px_0_0_#1bf86f,0_0px_0_0_#1bf87041]
+        active:border-b-[0px]
+        transition-all duration-150 [box-shadow:0_10px_0_0_#1bf86f,0_15px_0_0_#1bf87041]
+        border-b-[1px] border-green-300
+      "
       onClick={() => {
         const testPattern = new Tone.Part<[string, string]>(
           (time, chord) => {
@@ -81,7 +86,9 @@ const TestButton = () => {
         // emitNote(Tone.immediate(), 'C4');
       }}
     >
-      Play Note
+      <span className="flex flex-col justify-center items-center h-full text-white font-bold text-lg ">
+        Play Note
+      </span>
     </button>
   );
 };
@@ -193,14 +200,26 @@ export default function App() {
   };
 
   return (
-    <div>
-      <h1>React ToneJS E-Piano Experiment</h1>
+    <div className="text-center">
+      <h1 className="text-xl">React ToneJS E-Piano Experiment</h1>
 
       {started ? (
         <Main />
       ) : (
-        <button type="button" onClick={() => startCallback()}>
-          Initialize
+        <button
+          className="
+            button w-40 h-16 bg-blue-500 rounded-lg cursor-pointer select-none
+            active:translate-y-2  active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#1b70f841]
+            active:border-b-[0px]
+            transition-all duration-150 [box-shadow:0_10px_0_0_#1b6ff8,0_15px_0_0_#1b70f841]
+            border-b-[1px] border-blue-400
+          "
+          type="button"
+          onClick={() => startCallback()}
+        >
+          <span className="flex flex-col justify-center items-center h-full text-white font-bold text-lg ">
+            Initialize
+          </span>
         </button>
       )}
     </div>
