@@ -20,6 +20,7 @@ const PushButton: React.FC<
         'font-sans font-bold tracking-tighter uppercase',
         'border-egreen border-2 bg-egreen',
         'text-eblack',
+        'hover:bg-ewhite hover:border-ewhite',
         'active:bg-eblack active:border-ewhite active:text-ewhite'
       )}
       type="button"
