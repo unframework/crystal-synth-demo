@@ -10,19 +10,31 @@ import {
 
 import { Synth } from './Synth';
 
+const PushButton: React.FC<
+  React.PropsWithChildren<{ onClick: () => void }>
+> = ({ onClick, children }) => {
+  return (
+    <button
+      className={clsx(
+        'px-4 py-2 rounded-sm cursor-pointer select-none',
+        'font-sans font-bold tracking-tighter uppercase',
+        'border-egreen border-[1px] bg-egreen',
+        'text-eblack',
+        'active:bg-eblack active:border-ewhite active:text-ewhite'
+      )}
+      type="button"
+      onClick={onClick}
+    >
+      <span className={clsx('flex scale-y-125')}>{children}</span>
+    </button>
+  );
+};
+
 const TestButton = () => {
   const emitNote = useNoteEmitter('exampleSynth');
 
   return (
-    <button
-      type="button"
-      className="
-        px-4 py-2 rounded-sm cursor-pointer select-none
-        active:translate-y-[1px]
-        border-[1px] border-egreen
-        text-egreen
-        font-serif
-      "
+    <PushButton
       onClick={() => {
         const testPattern = new Tone.Part<[string, string]>(
           (time, chord) => {
@@ -88,7 +100,7 @@ const TestButton = () => {
       }}
     >
       Play Note
-    </button>
+    </PushButton>
   );
 };
 
@@ -205,19 +217,7 @@ export default function App() {
       {started ? (
         <Main />
       ) : (
-        <button
-          className="
-            px-4 py-2 rounded-sm cursor-pointer select-none
-            active:translate-y-[1px]
-            border-[1px] border-egreen
-            text-egreen
-            font-serif
-          "
-          type="button"
-          onClick={() => startCallback()}
-        >
-          Initialize
-        </button>
+        <PushButton onClick={startCallback}>Initialize</PushButton>
       )}
     </div>
   );
