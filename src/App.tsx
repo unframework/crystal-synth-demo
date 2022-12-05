@@ -16,7 +16,7 @@ const PushButton: React.FC<
   return (
     <button
       className={clsx(
-        'px-4 py-2 rounded-sm cursor-pointer select-none',
+        'px-2 py-1 rounded-sm cursor-pointer select-none',
         'font-sans font-bold tracking-tighter uppercase',
         'border-egreen border-2 bg-egreen',
         'text-eblack',
