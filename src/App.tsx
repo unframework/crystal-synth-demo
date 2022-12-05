@@ -16,11 +16,11 @@ const TestButton = () => {
     <button
       type="button"
       className="
-        button w-40 h-16 bg-green-400 rounded-lg cursor-pointer select-none
-        active:translate-y-2  active:[box-shadow:0_0px_0_0_#1bf86f,0_0px_0_0_#1bf87041]
-        active:border-b-[0px]
-        transition-all duration-150 [box-shadow:0_10px_0_0_#1bf86f,0_15px_0_0_#1bf87041]
-        border-b-[1px] border-green-300
+        px-4 py-2 rounded-sm cursor-pointer select-none
+        active:translate-y-[1px]
+        border-[1px] border-egreen
+        text-egreen
+        font-serif
       "
       onClick={() => {
         const testPattern = new Tone.Part<[string, string]>(
@@ -86,9 +86,7 @@ const TestButton = () => {
         // emitNote(Tone.immediate(), 'C4');
       }}
     >
-      <span className="flex flex-col justify-center items-center h-full text-white font-bold text-lg ">
-        Play Note
-      </span>
+      Play Note
     </button>
   );
 };
@@ -201,25 +199,23 @@ export default function App() {
 
   return (
     <div className="text-center">
-      <h1 className="text-xl">React ToneJS E-Piano Experiment</h1>
+      <h1 className="text-xl mb-4">React ToneJS E-Piano Experiment</h1>
 
       {started ? (
         <Main />
       ) : (
         <button
           className="
-            button w-40 h-16 bg-blue-500 rounded-lg cursor-pointer select-none
-            active:translate-y-2  active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#1b70f841]
-            active:border-b-[0px]
-            transition-all duration-150 [box-shadow:0_10px_0_0_#1b6ff8,0_15px_0_0_#1b70f841]
-            border-b-[1px] border-blue-400
+            px-4 py-2 rounded-sm cursor-pointer select-none
+            active:translate-y-[1px]
+            border-[1px] border-egreen
+            text-egreen
+            font-serif
           "
           type="button"
           onClick={() => startCallback()}
         >
-          <span className="flex flex-col justify-center items-center h-full text-white font-bold text-lg ">
-            Initialize
-          </span>
+          Initialize
         </button>
       )}
     </div>
