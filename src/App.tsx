@@ -18,7 +18,7 @@ const PushButton: React.FC<
       className={clsx(
         'px-4 py-2 rounded-sm cursor-pointer select-none',
         'font-sans font-bold tracking-tighter uppercase',
-        'border-egreen border-[1px] bg-egreen',
+        'border-egreen border-2 bg-egreen',
         'text-eblack',
         'active:bg-eblack active:border-ewhite active:text-ewhite'
       )}
