@@ -212,14 +212,20 @@ export default function App() {
   };
 
   return (
-    <div className="text-center">
+    <div className="flex-1 flex flex-col items-center text-center">
       <h1 className="text-xl mb-4">React ToneJS E-Piano Experiment</h1>
 
-      {started ? (
-        <Main />
-      ) : (
-        <PushButton onClick={startCallback}>Initialize</PushButton>
-      )}
+      <div className="flex-1">
+        {started ? (
+          <Main />
+        ) : (
+          <PushButton onClick={startCallback}>Initialize</PushButton>
+        )}
+      </div>
+
+      <div className="font-mono text-sm text-right bg-eorange-500 text-eblack">
+        Version 20230108.165700 -- @unframework
+      </div>
     </div>
   );
 }

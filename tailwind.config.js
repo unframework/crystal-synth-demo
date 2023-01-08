@@ -5,6 +5,7 @@ module.exports = {
     fontFamily: {
       sans: ['Arial'],
       serif: ['TimesCondensed'],
+      mono: ['Anonymous Pro'],
     },
 
     extend: {
